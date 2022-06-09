@@ -6,242 +6,48 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Instagram</title>
 
-  <style>
-    /*Custom Properties*/
-    :root {
-      --facebook-dark-blue-color: rgb(64,81,181);
-      --black-color: rgb(39,39,39);
-      --light-blue-color: rgb(0,149,246);
-      --gray-color: rgb(142,142,142);
-      --light-gray-color: rgb(250,250,250);
-      --gray-border-color: rgb(219,219,219);
-      --white-color: rgb(255,255,255);
-      --primary-font: Arial;
-    }
-
-    body {
-      margin: 0px;
-      font-family: var(--primary-font);
-
-      background-color: rgb(250,250,250);
-    }
-
-    img {
-      width: 100px;
-    }
-
-    #log-in-sign-up-get-the-app-container {
-      height: 100vh;
-      
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
-
-    .container {
-      width: 21.75rem; /*width: 348px*/
-      margin: 0rem auto 0rem auto; /*.container's leftover margin to the right has been equally distributed between margin-left and margin-right.*/
-    }
-
-    .log-in-container {
-      background-color: var(--white-color);
-      border-style: solid;
-      border-color: var(--gray-border-color);
-      border-width: 0.1rem;
-
-      padding: 4rem 2rem 2rem 2rem;
-
-      margin-bottom: 0.8rem;
-    }
-
-    #instagram-title {
-      width: 13rem;
-
-      margin-bottom: 3rem;
-    }
-
-    #username,
-    #password {
-      width: 90%;
-      color: black;
-      font-size: 1rem;
-
-      text-align: left;
-
-      background-color: var(--light-gray-color);
-
-      padding: 0.8rem 0.7rem 0.8rem 0.7rem;
-
-      border-style: solid;
-      border-color: var(--gray-border-color);
-      border-width: 0.1rem;
-      border-radius: 0.3rem;
-    }
-
-    #username {
-      margin-bottom: 0.5rem;
-    }
-
-    #password {
-      margin-bottom: 1rem;
-    }
-
-    #username::placeholder,
-    #password::placeholder {
-      font-size: 1rem;
-      color: var(--gray-color);
-    }
-
-    /*
-    Goal: Disable the Log In Button, and also style the disabled Log In Button
-    Solution: In the <button>, add the word "disabled". Then, go to CSS and add
-    "button:disabled, 
-    button[disabled] {
-
-    }
-    */
-    button:disabled,
-    button[disabled] {
-      background-color: var(--light-blue-color);
-      color: white;
-      font-weight: bold;
-      font-size: 1.2rem;
-      opacity: 0.4;
-      border: none;
-
-      margin-bottom: 2rem;
-      width: 21.1725rem;
-      border-radius: 0.3rem;
-
-      padding: 0.5rem 0rem 0.5rem 0rem;
-
-
-
-    }
-
-    /*
-    ------ OR ------
-    */
-    #line {
-      text-align: center;
-      border-bottom: 1px solid var(--gray-border-color);
-      line-height: 0.1rem;
-      margin: 10px 0 20px;
-    }
-
-    #line > span {
-      color: var(--gray-color);
-      font-weight: 550;
-      background: #fff;
-      padding: 0rem 1.5rem 0rem 1.5rem;
-    }
-
-    #log-in-with-facebook {
-      display: flex;
-      flex-direction: row;
-      justify-content: center;
-      align-items: center;
-
-      color: var(--facebook-dark-blue-color);
-      font-weight: bold;
-      text-decoration: none;
-
-      margin-top: 3rem;
-      margin-bottom: 1.5rem;
-    }
-
-    #facebook-logo {
-      width: 1.5rem;
-    }
-
-    #forgot-password {
-      color: var(--facebook-dark-blue-color);
-      text-decoration: none;
-    }
-
-    .center-the-element {
-      display: block; /*create leftover margin*/
-      margin: 0px auto 0px auto; /*equally distribute that leftover margin between margin-left and margin-right*/
-
-      /*
-      If the HTML element does not have leftover margin and hence it cannot be centered using the two lines of code above,
-      then use text-align: center to center the HTML element.
-      */
-      text-align: center;
-    }
-
-    .sign-up-container {
-      padding: 1.7rem 2rem 1.7rem 2rem;
-      background-color: var(--white-color);
-      border-style: solid;
-      border-color: var(--gray-border-color);
-      border-width: 0.1rem;
-
-      margin-bottom: 2rem;
-    }
-
-    #dont-have-an-account-words {
-      color: var(--black-color);
-    }
-
-    #sign-up-words {
-      font-weight: bold;
-      color: var(--light-blue-color);
-    }
-
-    #get-the-app-images-container {
-      display:flex;
-      flex-direction: row;
-      justify-content: center;
-
-      margin-top: 1.5rem;
-    }
-
-    #app-store-image,
-    #google-play-image {
-      width: 10rem; /*set app-store-image and google-play-image to 160px*/
-    }
-
-    #app-store-image {
-      margin-right: 0.625rem;
-    }
-
-
-  </style>
+  <link rel="icon" href="images/instagram-logo.webp"> <!--Favicon-->
+  <link rel="stylesheet" href="instagram.css"> <!--instagram.css-->
 </head>
 
 <body>
-  <div id="log-in-sign-up-get-the-app-container">
-    <section> <!--Log In Section-->
-      <div class="container log-in-container">
-        <img id="instagram-title" class="center-the-element" src="images/instagram-title.png">
-        <input id="username" class="center-the-element" type="text" placeholder="Phone number, username, or email">
-        <input id="password" class="center-the-element" type="password" placeholder="Password">
-        <button disabled id="log-in-button" class="center-the-element">Log In</button>
-        <p id="line"><span>OR</span></p> <!-- --------- OR --------- -->
-        <a id="log-in-with-facebook" class="center-the-element" href="">
-          <img id="facebook-logo" src="images/facebook-logo.png"/>Log in with Facebook
-        </a>
-        <a id="forgot-password" class="center-the-element" href="">Forgot password?</a>
-      </div>
-    </section>
-  
-    <section> <!--Sign Up Section-->
-      <div class="container sign-up-container">
-        <p id="dont-have-an-account-words" class="center-the-element">Don't have an account? <span id="sign-up-words">Sign up</span></p>
-      </div>
-    </section>
-  
-    <section> <!--Get the Instagram App Section-->
-      <div class="container">
-        <p id="get-the-app-words" class="center-the-element">Get the app.</p>
-        <div id="get-the-app-images-container">
-          <img id="app-store-image" src="images/app-store.png">
-          <img id="google-play-image" src="images/google-play.png">
+  <div id="split">
+
+    <div id="instagram-image-container">
+      <img id="instagram-image" src="images/instagram-image.png">
+    </div>
+
+    <div id="log-in-sign-up-get-the-app-container">
+      <section> <!--Log In Section-->
+        <div class="container log-in-container">
+          <img id="instagram-title" class="center-the-element" src="images/instagram-title.png">
+          <input id="username" class="center-the-element" type="text" placeholder="Phone number, username, or email">
+          <input id="password" class="center-the-element" type="password" placeholder="Password">
+          <button disabled id="log-in-button" class="center-the-element">Log In</button>
+          <p id="line"><span>OR</span></p> <!-- --------- OR --------- -->
+          <a id="log-in-with-facebook" class="center-the-element" href="">
+            <img id="facebook-logo" src="images/facebook-logo.png"/>Log in with Facebook
+          </a>
+          <a id="forgot-password" class="center-the-element" href="">Forgot password?</a>
         </div>
-      </div>
-    </section>
-  </div>
+      </section>
+    
+      <section> <!--Sign Up Section-->
+        <div class="container sign-up-container">
+          <p id="dont-have-an-account-words" class="center-the-element">Don't have an account? <span id="sign-up-words">Sign up</span></p>
+        </div>
+      </section>
+    
+      <section> <!--Get the Instagram App Section-->
+        <div class="container">
+          <p id="get-the-app-words" class="center-the-element">Get the app.</p>
+          <div id="get-the-app-images-container">
+            <img id="app-store-image" src="images/app-store.png">
+            <img id="google-play-image" src="images/google-play.png">
+          </div>
+        </div>
+      </section>
+    </div>
 
 </body>
 </html>
@@ -256,4 +62,14 @@
   3) decorate the HTML elements and separate them 
   - set custom properties
   4) optional
+
+
+  how to center elements:
+  horizontally:
+  1) width, and then margin: 0 auto 0 auto
+  2) display: flex, flex-direction: row; justify-content: center
+  3) text-align: center <--this works for elements without left and right margins
+
+  vertically:
+  1) height: 100vh, display: flex, flex-direction: column, justify-content: center
 -->

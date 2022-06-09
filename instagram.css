@@ -1,0 +1,225 @@
+/*Custom Properties*/
+:root {
+  --facebook-dark-blue-color: rgb(64,81,181);
+  --black-color: rgb(39,39,39);
+  --light-blue-color: rgb(0,149,246);
+  --gray-color: rgb(142,142,142);
+  --light-gray-color: rgb(250,250,250);
+  --gray-border-color: rgb(219,219,219);
+  --white-color: rgb(255,255,255);
+  --primary-font: Arial;
+}
+
+body {
+  margin: 0px;
+  font-family: var(--primary-font);
+
+  background-color: rgb(250,250,250);
+}
+
+img {
+  width: 100px;
+}
+
+#log-in-sign-up-get-the-app-container {
+  height: 100vh;
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.container {
+  width: 21.75rem; /*width: 348px*/
+  margin: 0rem auto 0rem auto; /*.container's leftover margin to the right has been equally distributed between margin-left and margin-right.*/
+}
+
+.log-in-container {
+  background-color: var(--white-color);
+  border-style: solid;
+  border-color: var(--gray-border-color);
+  border-width: 0.1rem;
+
+  padding: 4rem 2rem 2rem 2rem;
+
+  margin-bottom: 0.8rem;
+}
+
+#instagram-title {
+  width: 13rem;
+
+  margin-bottom: 3rem;
+}
+
+#username,
+#password {
+  width: 90%;
+  color: black;
+  font-size: 1rem;
+
+  text-align: left;
+
+  background-color: var(--light-gray-color);
+
+  padding: 0.8rem 0.7rem 0.8rem 0.7rem;
+
+  border-style: solid;
+  border-color: var(--gray-border-color);
+  border-width: 0.1rem;
+  border-radius: 0.3rem;
+
+  outline: none;
+}
+
+#username {
+  margin-bottom: 0.5rem;
+}
+
+#password {
+  margin-bottom: 1rem;
+}
+
+#username::placeholder,
+#password::placeholder {
+  font-size: 1rem;
+  color: var(--gray-color);
+}
+
+/*
+Goal: Disable the Log In Button, and also style the disabled Log In Button
+Solution: In the <button>, add the word "disabled". Then, go to CSS and add
+"button:disabled, 
+button[disabled] {
+
+}
+*/
+button:disabled,
+button[disabled] {
+  background-color: var(--light-blue-color);
+  color: white;
+  font-weight: bold;
+  font-size: 1.2rem;
+  opacity: 0.4;
+  border: none;
+
+  margin-bottom: 2rem;
+  width: 21.1725rem;
+  border-radius: 0.3rem;
+
+  padding: 0.5rem 0rem 0.5rem 0rem;
+
+
+
+}
+
+/*
+------ OR ------
+*/
+#line {
+  text-align: center;
+  border-bottom: 1px solid var(--gray-border-color);
+  line-height: 0.1rem;
+  margin: 10px 0 20px;
+}
+
+#line > span {
+  color: var(--gray-color);
+  font-weight: 550;
+  background: #fff;
+  padding: 0rem 1.5rem 0rem 1.5rem;
+}
+
+#log-in-with-facebook {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+  color: var(--facebook-dark-blue-color);
+  font-weight: bold;
+  text-decoration: none;
+
+  margin-top: 3rem;
+  margin-bottom: 1.5rem;
+}
+
+#facebook-logo {
+  width: 1.5rem;
+}
+
+#forgot-password {
+  color: var(--facebook-dark-blue-color);
+  text-decoration: none;
+}
+
+.center-the-element {
+  display: block; /*create leftover margin*/
+  margin: 0px auto 0px auto; /*equally distribute that leftover margin between margin-left and margin-right*/
+
+  /*
+  If the HTML element does not have leftover margin and hence it cannot be centered using the two lines of code above,
+  then use text-align: center to center the HTML element.
+  */
+  text-align: center;
+}
+
+.sign-up-container {
+  padding: 1.7rem 2rem 1.7rem 2rem;
+  background-color: var(--white-color);
+  border-style: solid;
+  border-color: var(--gray-border-color);
+  border-width: 0.1rem;
+
+  margin-bottom: 2rem;
+}
+
+#dont-have-an-account-words {
+  color: var(--black-color);
+}
+
+#sign-up-words {
+  font-weight: bold;
+  color: var(--light-blue-color);
+}
+
+#get-the-app-images-container {
+  display:flex;
+  flex-direction: row;
+  justify-content: center;
+
+  margin-top: 1.5rem;
+}
+
+#app-store-image,
+#google-play-image {
+  width: 10rem; /*set app-store-image and google-play-image to 160px*/
+}
+
+#app-store-image {
+  margin-right: 0.625rem;
+}
+
+#instagram-image-container {
+  display: none;
+}
+
+@media screen and (min-width: 55rem) {
+  #split {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  #instagram-image-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+
+    margin-right: 2.5rem;
+  }
+
+  #instagram-image {
+    width: 21rem;
+  }
+}
